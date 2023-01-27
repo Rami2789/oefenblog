@@ -20,9 +20,7 @@ require_once '../backend/user.php';
                             <input class="password" type='password' name='password' placeholder="Wachtwoord" required>
                             <Input class="submit-btn" type='submit' name='login' placeholder="inloggen" value="Log in">
                             <p class="Register-p">Heb je nog niet een account? <a href="registreren.php" class="Register-new-acc">Registreer</a></p>
-
-                    </form>
-                    
+                    </form>  
             </div>
         </div>
 </section>
