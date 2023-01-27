@@ -1,7 +1,7 @@
  <html>
     <section id="footer">
         <article class="footer-links">
-            <img src="../img/logo.png" alt="" height="80px">
+            <img src="img/logo.png" alt="" height="80px">
             <p>&#169;Copyright 2023<br>Triple Energy</p>
         </article>
 
@@ -26,7 +26,7 @@
         </article>
     </section>
 
-  <script src="../js/global.js"></script>
+  <script src="js/global.js"></script>
   <script src="https://kit.fontawesome.com/5b96b17e8a.js" crossorigin="anonymous"></script>
 </body>
 </html>

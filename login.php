@@ -1,31 +1,26 @@
-<?php
-require_once '../partial/loginheader.php';
-require_once '../backend/user.php';
-
-
-?>
+<?php require_once 'partial/loginheader.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="../css/home.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
 </head>
+<body>
+    <head>
+        <link rel="stylesheet" href="css/home.css">
+    </head>
 
 
-<section id="content" >
-        <div class="hobo-form">
-            
-            <div class="login">
-                <h1 class="Sign-in-text">Sign in</h1>
-
-                    <form method="post" >
-                            <input class="name" type='email' name='email' placeholder="email" required>
-                            <input class="password" type='password' name='password' placeholder="Wachtwoord" required>
-                            <Input class="submit-btn" type='submit' name='login' placeholder="inloggen" value="Log in">
-                            <p class="Register-p">Heb je nog niet een account? <a href="registreren.php" class="Register-new-acc">Registreer</a></p>
-                    </form>  
-            </div>
-        </div>
-</section>
+    <form method="post" style="height: 100vh;">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Register">
+    </form>
 
 
 
-
-<?php require_once '../partial/footer.php'; ?>
+</body>
+</html>
+<?php require_once 'partial/footer.php'; ?>
