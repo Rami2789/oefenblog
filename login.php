@@ -1,26 +1,32 @@
-<?php require_once 'partial/loginheader.php'; ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
-<body>
+<?php 
+    require_once 'partial/loginheader.php'; 
+    require_once 'backend/class/User.php';
+
+$user = new User();
+
+
+if (isset($_POST['login'])) {
+
+    echo $user->login($_POST);
+}
+?>
     <head>
-        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/partial.css">
     </head>
 
 
-    <form method="post" style="height: 100vh;">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="submit" value="Register">
-    </form>
+    <main>
+        <section class="form" >
+            <form method="post" style="height: 100vh;">
+                <label for="username" id="username">Gebruikersnaam: </label>
+                <input type="text" name="username" required>
+                <label for="password">Wachtwoord: </label>
+                <input type="password" name="password" required>
+                <input type="submit" name="login" value="Login">
+            </form>
+            <a href="registratie.php">Registreren</a>
+        </section>
+    </main>
 
 
-
-</body>
-</html>
 <?php require_once 'partial/footer.php'; ?>
