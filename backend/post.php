@@ -1,6 +1,7 @@
 <?php 
 require_once 'userpartial/header.php';
 require_once 'class/post.php';
+require_once 'class/user.php';
 session_start();
 $post = new Post();
 
@@ -15,7 +16,7 @@ $post = new Post();
     
     <main>
         <?php
-        foreach ($post->getPost() as $posts) {
+        foreach ($post->getPostFromUser($_SESSION['id']) as $posts) {
             ?>
             <article class="all-posts">
                 <h1><a href="#"><?php echo $posts->title ?></a></h1>
