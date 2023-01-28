@@ -32,10 +32,10 @@ class Post extends DbConfig{
     }
 
 
-    public function getPostFromUser($id){
+    public function getPostFromUser($author){
         $sql = "SELECT * FROM posts WHERE author = :author AND deleted = 0";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->bindParam(":author", $id);
+        $stmt->bindParam(":author", $author);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
