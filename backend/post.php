@@ -20,8 +20,8 @@ $post = new Post();
             ?>
             <article class="all-posts">
                 <h1><a href="#"><?php echo $posts->title ?></a></h1>
-                <p><?php  echo $posts->description ?></p>
-                <p><?php  echo $posts->body ?></p>
+                <p><?php echo $posts->description ?></p>
+                <p><?php echo $posts->body ?></p>
             </article>
         <?php } ?>
     </main>
