@@ -5,6 +5,9 @@ require_once 'class/user.php';
 session_start();
 $post = new Post();
 
+if(isset($_POST['create'])){
+	echo $post->create($_POST);
+}
 ?>
 <head>
     <link rel="stylesheet" href="../css/partial.css">
@@ -13,8 +16,16 @@ $post = new Post();
 
 
 
+
     
     <main>
+        <h1>Add posts</h1>
+        <form method="post">
+				<input type="text" name="title" placeholder="Title" required>
+	    		<input type="text" name="description" placeholder="Description" required>
+	    		<input type="text" name="body" placeholder="Body" required>
+	    		<input type="submit" name="create" value="Create">
+	    	</form>
         <?php
         foreach ($post->getPostFromUser($_SESSION['id']) as $posts) {
             ?>

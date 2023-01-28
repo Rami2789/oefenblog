@@ -5,7 +5,7 @@ require_once "DbConfig.php";
 class Post extends DbConfig{
 
     public function create($data){
-        session_start();
+        // session_start();
         $author = $_SESSION['id'];
 
         try{
@@ -39,6 +39,7 @@ class Post extends DbConfig{
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
+
 
 
 
