@@ -3,8 +3,8 @@ require_once 'userpartial/header.php';
 require_once 'class/post.php';
 session_start();
 $post = new Post();
-?>
 
+?>
 <head>
     <link rel="stylesheet" href="../css/partial.css">
     <link rel="stylesheet" href="../css/allposts.css">
@@ -12,10 +12,8 @@ $post = new Post();
 
 
 
-<main>
-<h1>
-    Je bent ingelogd :)))))))))))
-</h1>
+    
+    <main>
         <?php
         foreach ($post->getPost() as $posts) {
             ?>
@@ -25,18 +23,7 @@ $post = new Post();
                 <p><?php  echo $posts->body ?></p>
             </article>
         <?php } ?>
-</main>
-
-
-
-
-
-
-
-
-
-
-
+    </main>
 
 
 

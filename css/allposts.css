@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/* CSS Document */
+
+*{
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	background-size: cover;
+}
+
+
+@media screen and (min-width: 100px) and (max-width:768.9px) {
+
+
+
+}
+
+
+@media screen and (min-width: 769px) {
+main{
+    height: 100vh;
+}
+
+.all-posts{
+    text-align: center;
+    color: black;
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+}
+.all-posts a{
+    color: black;
+    text-transform: capitalize;
+}
+
+.all-posts a:hover{
+    color: blue;
+}
+
+
+    
+}
