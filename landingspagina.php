@@ -1,4 +1,4 @@
-<?php require_once 'partial/loginheader.php'; ?>
+<?php require_once 'partial/loginheader.php';  ?>
 
 
 Je bent niet ingelogd

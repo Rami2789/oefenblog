@@ -18,7 +18,6 @@
                 <li><a class="" href="landingspagina.php">Home</a></li>
                 <li><a href="login.php">Login</a></li>
                 <li><a href="register.php">Registreren</a></li>
-                
             </ul>
         </nav>
     </header>
@@ -26,8 +25,8 @@
     <div id="menu" class="menu">
         <a href="#" class="closebtn" onclick="closeBtn()"><i class="fas fa-times"></i></a>
         <li><a class="" href="landingspagina.php">Home</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="register.php">Registreren</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Registreren</a></li>
     </div>
 
 </html>
