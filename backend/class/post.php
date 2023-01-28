@@ -40,6 +40,16 @@ class Post extends DbConfig{
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public function getPostID($postID){
+        $sql = "SELECT * FROM posts
+                JOIN users ON users.id = posts.author
+                WHERE posts.id = :postID";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(":postID", $postID);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
 
 
 
