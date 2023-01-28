@@ -4,14 +4,6 @@ require_once "DbConfig.php";
 
 class Post extends DbConfig{
 
-    public function getPost(){
-        $sql = "SELECT * FROM posts WHERE deleted = 0";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_OBJ);
-    }
-
-
     public function create($data){
         session_start();
         $author = $_SESSION['id'];
@@ -29,6 +21,23 @@ class Post extends DbConfig{
         }catch(Exception $e){
             echo $e->getMessage();
         }
+    }
+
+
+    public function getPost(){
+        $sql = "SELECT * FROM posts WHERE deleted = 0";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
+    public function getPostFromUser($id){
+        $sql = "SELECT * FROM posts WHERE author = :author AND deleted = 0";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(":author", $id);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
 

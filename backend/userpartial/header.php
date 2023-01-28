@@ -15,7 +15,7 @@
         <a href="#" id="openbtn" onclick="openBtn()"><i class="fas fa-bars"></i></a>
         <nav>
             <ul>
-                <li><a href="post.php">Blogs</a></li>
+                <li><a href="home.php">Blogs</a></li>
                 <li><a href="profiel.php">Profiel</a></li>
                 <li><a href="post.php">My Blogs</a></li>
                 <li><a href="../backend/logout.php">Log Uit</a></li>
