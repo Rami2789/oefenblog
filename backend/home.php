@@ -13,9 +13,8 @@ $post = new Post();
 
 
 <main>
-<h1>
-    Je bent ingelogd :)))))))))))
-</h1>
+<h1 style="text-align: center;"> Je bent ingelogd :))))))))))) </h1>
+<h1 style="text-align: center; margin-top: 10vh;">All posts</h1>
         <?php
         foreach ($post->getPost() as $posts) {
             ?>
