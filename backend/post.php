@@ -9,7 +9,7 @@ if(isset($_POST['create'])){
 	echo $post->create($_POST);
 }
 if(isset($_GET['delete'])){
-	echo $post->deletePost($_POST, $_GET['posts']);
+$post->deletePost($_POST);
 }
 
 ?>
