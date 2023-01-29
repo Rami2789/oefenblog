@@ -23,7 +23,6 @@ $post = new Post();
                 <h1><a href="postinfo.php?posts=<?php echo $posts->id ?>"><?php echo $posts->title ?></a></h1>
                 <p><?php  echo $posts->description ?></p>
                 <p><?php  echo $posts->body ?></p>
-                <a href="postedit.php?posts=<?php echo $posts->id ?>">Edit</a>
             </article>
         <?php } ?>
 </main>
