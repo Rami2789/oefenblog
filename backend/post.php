@@ -8,6 +8,10 @@ $post = new Post();
 if(isset($_POST['create'])){
 	echo $post->create($_POST);
 }
+if(isset($_GET['delete'])){
+	echo $post->deletePost($_POST, $_GET['posts']);
+}
+
 ?>
 <head>
     <link rel="stylesheet" href="../css/partial.css">
@@ -31,10 +35,13 @@ if(isset($_POST['create'])){
         foreach ($post->getPostFromUser($_SESSION['id']) as $posts) {
             ?>
             <article class="all-posts">
+                <form method="post">
                 <h1><a href="postinfo.php?posts=<?php echo $posts->id ?>"><?php echo $posts->title ?></a></h1>
                 <p><?php echo $posts->description ?></p>
                 <p><?php echo $posts->body ?></p>
                 <a href="postedit.php?posts=<?php echo $posts->id ?>">Edit</a>
+                <a href="postedit.php?posts=<?php echo $posts->id ?> &delete=true">Delete</a>
+                </form>
             </article>
         <?php } ?>
     </main>

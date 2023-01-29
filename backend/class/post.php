@@ -66,8 +66,18 @@ class Post extends DbConfig{
             echo $e->getMessage();
         }
     }
-
-
+  
+    public function deletePost($id,$data) {
+      try {
+        $sql = "UPDATE posts SET deleted = 1 WHERE id = :id";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(":id",$id);
+        $stmt->execute();
+        session_start();
+    }catch(Exception $e){
+        echo $e->getMessage();
+    }
+    }
 
 
 }

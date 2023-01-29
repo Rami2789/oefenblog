@@ -5,6 +5,11 @@ $post = new Post();
 if (isset($_POST['update'])) {
     $post->postUpdate($_POST, $_GET['posts']);
 }
+if (isset($_POST['delete']) || isset($_GET['delete'])){
+    $post->deletePost($_POST, $_GET['posts']);
+    header("location:post.php");
+}
+
 ?>
 
 <head>
