@@ -20,7 +20,7 @@ $post = new Post();
         foreach ($post->getPost() as $posts) {
             ?>
             <article class="all-posts">
-                <h1><a href="#"><?php echo $posts->title ?></a></h1>
+                <h1><a href="postinfo.php?posts=<?php echo $posts->id ?>"><?php echo $posts->title ?></a></h1>
                 <p><?php  echo $posts->description ?></p>
                 <p><?php  echo $posts->body ?></p>
             </article>

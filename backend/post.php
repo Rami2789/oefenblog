@@ -25,7 +25,8 @@ if(isset($_POST['create'])){
 	    		<input type="text" name="description" placeholder="Description" required>
 	    		<input type="text" name="body" placeholder="Body" required>
 	    		<input type="submit" name="create" value="Create">
-	    	</form>
+	    </form>
+        
         <?php
         foreach ($post->getPostFromUser($_SESSION['id']) as $posts) {
             ?>
@@ -33,6 +34,7 @@ if(isset($_POST['create'])){
                 <h1><a href="postinfo.php?posts=<?php echo $posts->id ?>"><?php echo $posts->title ?></a></h1>
                 <p><?php echo $posts->description ?></p>
                 <p><?php echo $posts->body ?></p>
+                <a href="postedit.php?posts=<?php echo $posts->id ?>">Edit</a>
             </article>
         <?php } ?>
     </main>

@@ -49,6 +49,23 @@ class Post extends DbConfig{
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
+    
+    public function postUpdate($data, $id){
+        try{
+            $sql = "UPDATE posts SET  title=:title, description=:description, body=:body WHERE id= :id";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->bindParam(":title", $data['title']);
+            $stmt->bindParam(":description", $data['description']);
+            $stmt->bindParam(":body", $data['body']);
+            $stmt->bindParam(":id", $id);
+            session_start();
+            if(!$stmt->execute()){
+                throw new Exception("Gegevens niet veranderd");
+            }
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
+    }
 
 
 
