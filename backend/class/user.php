@@ -59,10 +59,12 @@ class User extends DbConfig{
 
     public function userUpdate($data){
         try{
-            $sql = "UPDATE users SET username=:username WHERE id= :id";
+            $sql = "UPDATE users SET username=:username, password=:password WHERE id= :id";
+            $encryptedPassword = password_hash($data['password'], PASSWORD_BCRYPT, ['cost' => 12]);
             $stmt = $this->connect()->prepare($sql);
             $stmt->bindParam(":username", $data['username']);
             $stmt->bindParam(":id", $data['id']);
+            $stmt->bindParam(":password", $encryptedPassword);
             if(!$stmt->execute()){
                 throw new Exception("Gegevens niet veranderd");
             }

@@ -24,6 +24,7 @@ if(isset($_POST['delete'])){
             <article class="all-posts">
                 <form method="post">
                 <input value="<?php echo $users->username ?>" type="text" name="username"> 
+                <input value="" type="text" name="password"> 
                 <input  value="<?php echo $users->id ?>" type="number" name="id" readonly hidden> 
                 <input type="submit" value="Updaten" name="update">
                 <input type="submit" value="delete" name="delete">
