@@ -67,7 +67,7 @@ class Post extends DbConfig{
         }
     }
   
-    public function deletePost($id,$data) {
+    public function deletePost($data, $id) {
       try {
         $sql = "UPDATE posts SET deleted = 1 WHERE id = :id";
         $stmt = $this->connect()->prepare($sql);
