@@ -1,8 +1,15 @@
 <?php 
 require_once 'userpartial/header.php';
 require_once 'class/post.php';
+require_once 'class/comment.php';
+
 session_start();
 $post = new Post();
+$comment = new Comment();
+
+if(isset($_POST['create'])){
+	echo $comment->commentToevoegen($_POST);
+}
 ?>
 
 <head>
@@ -24,6 +31,14 @@ $post = new Post();
                 <p>Updated_on:<?php  echo $posts->updated_on ?></p>
             </article>
         <?php } ?>
+
+        <h1 style="text-align: center;">Add comment</h1>
+        <form method="post" style="text-align: center; margin-bottom: 10vh;">
+				<input type="text" name="author" placeholder="Je naam" required>
+				<input type="text" name="message" placeholder="message" required>
+				<input type="number" name="post_id" value="<?php echo $_GET['posts'] ?>" readonly hidden>
+		    		<input type="submit" name="create" value="Create">
+	    </form>
 </main>
 
 
