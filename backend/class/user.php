@@ -42,33 +42,45 @@ class User extends DbConfig{
     }
 
     public function getUser($username){
-        $sql = "SELECT * FROM users WHERE username = :username";
+        $sql = "SELECT * FROM users WHERE username = :username AND deleted = 0";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindParam(":username", $username);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
+    public function getUserId($id){
+        $sql = "SELECT * FROM users WHERE id = :id";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
 
+    public function userUpdate($data){
+        try{
+            $sql = "UPDATE users SET username=:username WHERE id= :id";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->bindParam(":username", $data['username']);
+            $stmt->bindParam(":id", $data['id']);
+            if(!$stmt->execute()){
+                throw new Exception("Gegevens niet veranderd");
+            }
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public function deleteUser($id) {
+        try {
+          $sql = "UPDATE users SET deleted = 1 WHERE id = :id";
+          $stmt = $this->connect()->prepare($sql);
+          $stmt->bindParam(":id",$id);
+          $stmt->execute();
+      }catch(Exception $e){
+          echo $e->getMessage();
+      }
+      }
 }
 
 

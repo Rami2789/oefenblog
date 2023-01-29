@@ -16,7 +16,7 @@
         <nav>
             <ul>
                 <li><a href="home.php">Blogs</a></li>
-                <li><a href="profiel.php">Profiel</a></li>
+                <li><a href="profile.php">Profiel</a></li>
                 <li><a href="post.php">My Blogs</a></li>
                 <li><a href="../backend/logout.php">Log Uit</a></li>
             </ul>
@@ -26,7 +26,7 @@
     <div id="menu" class="menu">
         <a href="#" class="closebtn" onclick="closeBtn()"><i class="fas fa-times"></i></a>
         <li><a class="" href="home.php">Home</a></li>
-        <li><a href="profiel.php">Profiel</a></li>
+        <li><a href="profile.php">Profiel</a></li>
         <li><a href="post.php">My Blogs</a></li>
         <li><a href="../backend/logout.php">Log Uit</a></li>
     </div>
