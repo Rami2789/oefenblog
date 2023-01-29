@@ -15,7 +15,7 @@
 @media screen and (min-width: 100px) and (max-width:768.9px) {
 
     body{
-        background-color: #243D4E;
+        background-color: #b8ccdf;
         font-family: 'Roboto', sans-serif;
     }
 
@@ -24,7 +24,7 @@
     header{
         width: 100vw;
         height: 95px;
-        background-color: #18557e;
+        background-color: #0a2232;
     }
 
     header nav{
@@ -38,7 +38,7 @@
       .menu{
         width: 0vw;
         height: 100vh;
-        background-color: #243D4E;
+        background-color: #0a2232;
         text-align: center;
         position: fixed;
         top: 0;
@@ -98,7 +98,7 @@
         flex-flow: column;
         align-items: center;
         justify-content: center;
-        background-color: #18557e;
+        background-color: #0a2232;
       }
   
       .footer-links{
