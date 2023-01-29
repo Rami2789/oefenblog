@@ -27,5 +27,16 @@ public function getComment($id){
     return $stmt->fetchAll(PDO::FETCH_OBJ);
 }
 
+public function deleteComment($id) {
+    try {
+      $sql = "UPDATE comments SET deleted = 1 WHERE id = :id";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->bindParam(":id",$id);
+      $stmt->execute();
+  }catch(Exception $e){
+      echo $e->getMessage();
+  }
+  }
+
 }
 ?>
