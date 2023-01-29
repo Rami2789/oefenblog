@@ -19,14 +19,14 @@ if(isset($_POST['create'])){
 
     
     <main>
-        <h1>Add posts</h1>
-        <form method="post">
+        <h1 style="text-align: center;">Add posts</h1>
+        <form method="post" style="text-align: center; margin-bottom: 10vh;">
 				<input type="text" name="title" placeholder="Title" required>
 	    		<input type="text" name="description" placeholder="Description" required>
 	    		<input type="text" name="body" placeholder="Body" required>
 	    		<input type="submit" name="create" value="Create">
 	    </form>
-        
+        <h1 style="text-align: center;">My posts</h1>
         <?php
         foreach ($post->getPostFromUser($_SESSION['id']) as $posts) {
             ?>
