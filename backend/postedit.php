@@ -29,6 +29,7 @@ if (isset($_POST['delete']) || isset($_GET['delete'])){
                     <h3>Description: <input type="text" name="description" value="<?php echo $posts->description ?>"></h3>
                     <h3>Body: <input type="text" name="body" value="<?php echo $posts->body ?>"></h3>
                     <input type="submit" name="update" value="Update">
+                    <input type="submit" name="delete" value="Delete">
                 </form>
             </article>
         <?php } ?>
