@@ -20,9 +20,7 @@
 
 
 @media screen and (min-width: 769px) {
-main{
-    height: 100vh;
-}
+
 
 .all-posts{
     text-align: center;

@@ -4,7 +4,7 @@ require_once "DbConfig.php";
 
 class Comment extends DbConfig{
 
-public function commentToevoegen(){
+public function commentToevoegen($data){
         try{
             $sql = "INSERT INTO comments (message, author, post_id) VALUES (:message,:author, :post_id)";
             $stmt = $this->connect()->prepare($sql);
@@ -19,6 +19,13 @@ public function commentToevoegen(){
         }
 }
 
+public function getComment($id){
+    $sql = "SELECT * FROM comments WHERE post_id = :post_id AND deleted = 0";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->bindParam(":post_id", $id);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_OBJ);
+}
 
 }
 ?>

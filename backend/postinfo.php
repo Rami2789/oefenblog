@@ -37,8 +37,17 @@ if(isset($_POST['create'])){
 				<input type="text" name="author" placeholder="Je naam" required>
 				<input type="text" name="message" placeholder="message" required>
 				<input type="number" name="post_id" value="<?php echo $_GET['posts'] ?>" readonly hidden>
-		    		<input type="submit" name="create" value="Create">
+		    	<input type="submit" name="create" value="Create">
 	    </form>
+        <?php
+        foreach ($comment->getcomment($_GET["posts"]) as $comments) {
+            ?>
+            <article class="all-posts">
+                <p>Naam: <?php echo $comments->author ?></p>
+                <p>comment: <?php  echo $comments->message ?></p>
+            </article>
+        <?php } ?>
+
 </main>
 
 
